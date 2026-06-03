@@ -32,13 +32,20 @@
     /* ── Hero ── */
     .hero {
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 2.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 2rem;
-      padding: 6rem 4rem 4rem;
-      position: relative;
-      overflow: hidden;
     }
     .hero-bg-glow {
       position: absolute; border-radius: 50%; filter: blur(110px); pointer-events: none;
@@ -154,7 +161,7 @@
 
     /* ── About ── */
     #about { background: var(--bg2); }
-    .about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: center; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .about-text p { color: #a1a1aa; line-height: 1.85; margin-bottom: 1.2rem; font-size: 1rem; }
     .about-text p strong { color: var(--text); font-weight: 500; }
     .about-photo { position: relative; }
@@ -300,7 +307,8 @@
 
     /* Responsive */
     @media (max-width: 960px) {
-      .hero { grid-template-columns:1fr; padding:7rem 2rem 4rem; }
+      .hero { padding:7rem 1.25rem 4rem; }
+      .hero-inner { grid-template-columns:1fr; }
       .hero-right { display:none; }
       .project-big { grid-template-columns:1fr; gap:2rem; }
       .project-big.rev { direction:ltr; }
@@ -345,6 +353,7 @@
   <div class="hero-bg-glow glow1"></div>
   <div class="hero-bg-glow glow2"></div>
 
+  <div class="hero-inner">
   <!-- Left -->
   <div class="hero-left">
     <div class="hero-badge">Product Owner · Fintech · AI</div>
@@ -435,6 +444,7 @@
       <div class="fc-sub">IIFL · ASK · 360One</div>
     </div>
   </div>
+  </div><!-- end hero-inner -->
 </section>
 
 <!-- About -->
