@@ -36,7 +36,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 2rem;
-      padding: 8rem 4rem 5rem;
+      padding: 6rem 4rem 4rem;
       position: relative;
       overflow: hidden;
     }
@@ -154,9 +154,23 @@
 
     /* ── About ── */
     #about { background: var(--bg2); }
-    .about-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 720px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: center; }
     .about-text p { color: #a1a1aa; line-height: 1.85; margin-bottom: 1.2rem; font-size: 1rem; }
     .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-photo { position: relative; }
+    .about-photo img {
+      width: 100%; border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      display: block;
+    }
+    .about-photo::before {
+      content: '';
+      position: absolute; inset: -1px;
+      border-radius: 21px;
+      background: linear-gradient(135deg, rgba(167,139,250,0.2), rgba(56,189,248,0.1));
+      z-index: -1;
+    }
 
     .chips { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.75rem; }
     .chip {
@@ -290,6 +304,8 @@
       .hero-right { display:none; }
       .project-big { grid-template-columns:1fr; gap:2rem; }
       .project-big.rev { direction:ltr; }
+      .about-grid { grid-template-columns:1fr; }
+      .about-photo { max-width: 360px; margin: 0 auto; }
     }
     @media (max-width: 768px) {
       nav { padding:1rem 1.25rem; }
@@ -452,6 +468,9 @@
           <span class="chip">Investment Platforms</span>
           <span class="chip">B2B & B2C Fintech</span>
         </div>
+      </div>
+      <div class="about-photo reveal" style="transition-delay:0.15s;">
+        <img src="profile.jpg" alt="Shruti Pansari" />
       </div>
     </div>
   </div>
